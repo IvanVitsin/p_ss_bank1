@@ -1,11 +1,10 @@
-package com.bank.Repository;
+package src.main.java.com.bank.Repository;
 
 
 
-import com.bank.Entity.HistoryEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
+import src.main.java.com.bank.Entity.HistoryEntity;
 
 
 @Repository

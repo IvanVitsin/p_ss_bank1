@@ -1,10 +1,10 @@
-package com.bank.Mapper;
+package src.main.java.com.bank.Mapper;
 
 
-import com.bank.DTO.HistoryDTO;
-import com.bank.Entity.HistoryEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
+import src.main.java.com.bank.DTO.HistoryDTO;
+import src.main.java.com.bank.Entity.HistoryEntity;
 
 @Mapper(componentModel = "history")
 public interface HistoryMapper {

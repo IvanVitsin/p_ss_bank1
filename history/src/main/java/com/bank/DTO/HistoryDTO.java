@@ -1,4 +1,4 @@
-package com.bank.DTO;
+package src.main.java.com.bank.DTO;
 
 
 import lombok.AllArgsConstructor;
