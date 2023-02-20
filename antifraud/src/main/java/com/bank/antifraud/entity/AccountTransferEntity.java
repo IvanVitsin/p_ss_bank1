@@ -9,7 +9,10 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-/*Сущность связанная с таблицей в бд */
+/**
+ * @author ivanvitsin
+ *
+ */
 
 @Entity
 @Table(name = "suspicious_account_transfers", schema = "public")
