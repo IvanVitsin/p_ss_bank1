@@ -19,14 +19,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 
 
-
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .host("http://http://localhost:8089/api/authorization/")
+                .host("http://localhost:8087/api/authorization/")
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
