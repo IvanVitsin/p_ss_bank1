@@ -22,22 +22,20 @@ spring:
     change-log: db/changelog/db.changelog-master.yaml
     enabled: true
     drop-first: false
-#    enabled: ${LIQUIBASE_ENABLED:true}
-#    drop-first: ${LIQUIBASE_DROP_FIRST:false}
   application:
     name: history-app
-#mvc:
-#  pathmatch:
-#    matching-strategy: ant_path_matcher
-#  jpa:
-#    properties:
-#      hibernate:
-#        dialect: org.hibernate.dialect.PostgreSQLDialect
-#        hbm2ddl:
-#          auto: none
-#        show_sql: true
-#        format_sql: true
-#
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: none
+        show_sql: true
+        format_sql: true
+
 #logging:
 #  level:
 #    org.hibernate.SQL: DEBUG

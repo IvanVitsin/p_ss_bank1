@@ -37,12 +37,12 @@ public class HistoryServiceImpl implements HistoryService {
         return HistoryMapper.MAPPER.toHistoryDTO(historyEntity2);
     }
 
-//    @Override
-//    @Transactional
-//    public HistoryDTO deleteHistory(HistoryDTO updateHistory) {
-//        HistoryEntity historyEntity = HistoryMapper.MAPPER.toHistory(updateHistory);
-//        HistoryEntity historyEntity1 = historyRepository.save(historyEntity);
-//        return HistoryMapper.MAPPER.toHistoryDTO(historyEntity1);
-//    }
+    @Override
+    @Transactional
+    public HistoryDTO deleteHistory(Long id, HistoryDTO updateHistory) {
+        HistoryEntity historyEntity = HistoryMapper.MAPPER.toHistory(updateHistory);
+        HistoryEntity historyEntity1 = historyRepository.save(historyEntity);
+        return HistoryMapper.MAPPER.toHistoryDTO(historyEntity1);
+    }
 }
 

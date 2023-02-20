@@ -11,7 +11,6 @@ public interface HistoryService {
 
     HistoryDTO saveHistory(Long id, HistoryDTO saveHistory);
     HistoryDTO updateHistory(Long id, HistoryDTO updateHistory);
-//    HistoryDTO deleteHistory(HistoryDTO updateHistory);
-
+    HistoryDTO deleteHistory(Long id, HistoryDTO updateHistory);
 
 }
