@@ -6,6 +6,7 @@ import com.bank.antifraud.repository.AccountTransferRepository;
 import com.bank.antifraud.service.AccountTransferService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/account-transfer")
-
+@Tag(name = "Подозрительные переводы по номеру аккаунта")
 @Api("контроллер Для подозрительных переводов на Аккаунте")
 public class AccountTransferController {
 

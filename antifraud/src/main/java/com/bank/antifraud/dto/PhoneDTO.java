@@ -5,7 +5,14 @@ import lombok.*;
 
 import javax.validation.constraints.NotNull;
 
-
+/**
+ * Класс PhoneDTO — это объект передачи данных (DTO),
+ * представляющий детали По транзакциям по номеру телефона.
+ *
+ * @author ivan vitsin
+ * @version 1.0
+ * @since 20.02.2023
+ */
 @Getter
 @Setter
 @AllArgsConstructor

@@ -5,6 +5,7 @@ import com.bank.antifraud.repository.PhoneTransferRepository;
 import com.bank.antifraud.service.PhoneTransferService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/api/phone-transfer")
 @Api("подозрительные операции по номеру телефона")
+@Tag(name = "Подозрительные переводы по номеру телефона")
 public class PhoneTransferController {
 
     private final PhoneTransferService phoneTransferService;

@@ -4,7 +4,14 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 import javax.validation.constraints.NotNull;
-
+/**
+ * Класс AccountDTO — это объект передачи данных (DTO),
+ * представляющий детали По транзакциям на аккаунте.
+ *
+ * @author ivan vitsin
+ * @version 1.0
+ * @since 20.02.2023
+ */
 @Getter
 @Setter
 @AllArgsConstructor
