@@ -23,7 +23,7 @@ public class HistoryConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .host("http://localhost:8088/api/history/")
+                .host("http://http://localhost:8088/api/history/")
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
@@ -43,4 +43,5 @@ public class HistoryConfig {
         );
     }
 }
+
 

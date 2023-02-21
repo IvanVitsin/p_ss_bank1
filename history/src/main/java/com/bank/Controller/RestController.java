@@ -39,8 +39,8 @@ public class RestController {
     public ResponseEntity<HistoryDTO> updateHistory(@PathVariable("id") Long id,@RequestBody HistoryDTO historyDTO) {
         return new ResponseEntity<>(historyService.updateHistory(id,historyDTO), HttpStatus.OK);
     }
-    @DeleteMapping("/{ig}")
-    @ApiOperation("Удаление аписей")
+    @DeleteMapping("/{id}")
+    @ApiOperation("Удаление записей")
     public ResponseEntity<HistoryDTO> deleteHistory(@PathVariable("id")  Long id, @RequestBody HistoryDTO historyDTO, @PathVariable String ig) {
         return new ResponseEntity<>(historyService.deleteHistory(id,historyDTO), HttpStatus.OK);
     }
