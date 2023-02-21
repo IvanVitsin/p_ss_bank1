@@ -29,12 +29,8 @@ public class SwaggerConfiguration {
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("src/main/java/com/bank/antifraud"))
                 .paths(PathSelectors.any())
-                .build();
-//                .host("http://localhost:8086/api/account-transfer")
-//                .select()
-//                .apis(RequestHandlerSelectors.any())
-//                .paths(PathSelectors.any())
-//                .build();
+                .build().host("http://localhost:8086/api/anti-fraud");
+
     }
 
     @Bean

@@ -16,6 +16,15 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class CustomResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
+    /**
+     * Этот метод обрабатывает общее исключение, которое может возникнуть в приложении.
+     * Метод регистрирует сообщение об ошибке и возвращает ответ  об ошибке.
+     *
+     * @param exception      Выброшенное исключение
+     * @param webRequest Объект WebRequest, содержащий информацию о запросе.
+     * @return ResponseEntity, обьъект содержащий сведения об ошибке
+     *
+     */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> exception(Exception exception, WebRequest webRequest) throws Exception {
         log.error("Exception during execution of application", exception);

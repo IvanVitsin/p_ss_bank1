@@ -57,7 +57,7 @@ public class AuditingPhone {
         auditEntity.setEntityJson(toJson(auditAbstract));
         auditEntity.setNewEntityJson(toJson(auditAbstract));
         entityManager.persist(auditEntity);
-        log.info("Данные о entity добавлены в таблицу аудит");
+        log.info("Данные об entity добавлены в таблицу аудит");
     }
 
     /**
