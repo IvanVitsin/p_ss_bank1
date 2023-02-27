@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Slf4j
 public class AccountTransferService {
+
     private final AccountTransferRepository accountTransferRepository;
 
 
@@ -59,7 +60,8 @@ public class AccountTransferService {
             log.error("does not exist");
             throw new NotFoundException("Транзакция не найдена");
         }
-        accountTransferRepository.save(entity);
+       // accountTransferRepository.save(entity);
+        log.info("Данные о транзакции предоставлены");
         return AllEntityMapper.MAPPER.toDTO(entity);
     }
 

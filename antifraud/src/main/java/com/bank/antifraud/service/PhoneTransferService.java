@@ -61,7 +61,6 @@ public class PhoneTransferService {
             log.error("does not exist");
             throw new NotFoundException("Транзакция не найдена");
         }
-        phoneTransferRepository.save(entity);
         return AllEntityMapper.MAPPER.toDTO(entity);
     }
 

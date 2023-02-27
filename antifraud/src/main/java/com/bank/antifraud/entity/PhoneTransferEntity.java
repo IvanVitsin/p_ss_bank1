@@ -2,10 +2,7 @@ package com.bank.antifraud.entity;
 
 import com.bank.antifraud.service.audit.AuditingAccount;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -15,6 +12,7 @@ import javax.persistence.*;
 @Table(name = "suspicious_phone_transfer", schema = "anti_fraud")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EntityListeners(AuditingAccount.class)

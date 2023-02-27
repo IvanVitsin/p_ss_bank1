@@ -20,7 +20,7 @@ public class BeanInit implements ApplicationContextAware {
      */
     @Override
     public void setApplicationContext(ApplicationContext applicationContext1) throws BeansException {
-        applicationContext1 = applicationContext;
+        applicationContext = applicationContext1;
         log.info("current context is BeanInit.class");
     }
 

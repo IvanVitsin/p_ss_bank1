@@ -13,20 +13,23 @@ management:
       exposure:
         include: '*'
 spring:
+  test:
+    database:
+      replace: none
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: password
   liquibase:
-    default-schema: anti_fraud
+    default-schema: ANTI_FRAUD
     change-log: db/changelog/db.changelog-master.yaml
     enabled: ${LIQUIBASE_ENABLED:true}
     drop-first: ${LIQUIBASE_DROP_FIRST:false}
   application:
     name: anti-fraud-app
-    mvc:
-      pathmatch:
-        matching-strategy: ant_path_matcher
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
       jpa:
         properties:
           hibernate:

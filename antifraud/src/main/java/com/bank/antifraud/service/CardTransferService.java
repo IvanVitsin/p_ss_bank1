@@ -60,7 +60,6 @@ public class CardTransferService {
             log.error("does not exist");
             throw new NotFoundException("Транзакция не найдена");
         }
-        cardTransferRepository.save(entity);
         return AllEntityMapper.MAPPER.toDTO(entity);
     }
 
