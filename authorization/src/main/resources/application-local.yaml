@@ -17,6 +17,8 @@ spring:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: password
+    hikari:
+      schema: authorization
   liquibase:
     default-schema: authorization
     change-log: db/changelog/db.changelog-master.yaml
@@ -24,3 +26,26 @@ spring:
     drop-first: false
   application:
     name: authorization-app
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jpa:
+    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: none
+        show_sql: true
+        format_sql: true
+    open-in-view: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql: TRACE
+
