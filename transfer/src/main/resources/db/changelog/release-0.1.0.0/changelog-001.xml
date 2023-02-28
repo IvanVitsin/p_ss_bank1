@@ -5,7 +5,7 @@
         xsi:schemaLocation="
         http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
-    <changeSet author="Рустам" id="1672954525823-1">
+    <changeSet author="Михаил" id="1672954525823-1">
         <createTable remarks="переводы по номеру счёта" tableName="account_transfer">
             <column autoIncrement="true" name="id" remarks="технический идентификатор" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="account_transfer_pkey"/>
@@ -22,7 +22,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Рустам" id="1672954525823-2">
+    <changeSet author="Михаил" id="1672954525823-2">
         <createTable remarks="аудит" tableName="audit">
             <column autoIncrement="true" name="id" remarks="технический идентификатор" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="audit_pkey"/>
@@ -47,7 +47,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Рустам" id="1672954525823-3">
+    <changeSet author="Михаил" id="1672954525823-3">
         <createTable remarks="переводы по номеру карты" tableName="card_transfer">
             <column autoIncrement="true" name="id" remarks="технический идентификатор" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="card_transfer_pkey"/>
@@ -64,7 +64,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Рустам" id="1672954525823-4">
+    <changeSet author="Михаил" id="1672954525823-4">
         <createTable remarks="переводы по номеру телефона" tableName="phone_transfer">
             <column autoIncrement="true" name="id" remarks="технический идентификатор" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="phone_transfer_pkey"/>
@@ -81,10 +81,10 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Рустам" id="1672954525823-5">
+    <changeSet author="Михаил" id="1672954525823-5">
         <addUniqueConstraint columnNames="account_number" constraintName="account_transfer_account_number_key" tableName="account_transfer"/>
     </changeSet>
-    <changeSet author="Рустам" id="1672954525823-6">
+    <changeSet author="Михаил" id="1672954525823-6">
         <addUniqueConstraint columnNames="card_number" constraintName="card_transfer_card_number_key" tableName="card_transfer"/>
     </changeSet>
 </databaseChangeLog>
