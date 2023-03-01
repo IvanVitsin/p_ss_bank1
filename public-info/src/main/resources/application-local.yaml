@@ -13,10 +13,24 @@ management:
       exposure:
         include: '*'
 spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: password
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: none
+        show_sql: true
+        format_sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   liquibase:
     default-schema: public_bank_information
     change-log: db/changelog/db.changelog-master.yaml
@@ -24,3 +38,10 @@ spring:
     drop-first: false
   application:
     name: public-info-app
+logging:
+  level:
+    org.hibernate.sql: DEBUG
+    org.hibernate.type.descriptor.sql: TRACE
+
+
+

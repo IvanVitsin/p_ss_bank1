@@ -1,7 +1,8 @@
-package com.bank.server;
+package src.test.java.com.bank.server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
 
 @SpringBootTest
 class ServerApplicationTests {
