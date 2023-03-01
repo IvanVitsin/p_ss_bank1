@@ -65,7 +65,7 @@ public class PassportController {
     @Operation(summary = "Удалить паспорт по ID",
             description = "Этот API позволяет удалить  существующий паспорт  по ID")
     @ApiResponse(responseCode = "200", description = "Паспорт успешно удален")
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}",produces = "application/json;charset=UTF-8")
     public ResponseEntity<String> deletePassport(@PathVariable("id")
                                                  @Parameter(description = "Идентификатор паспорта ID")
                                                  Long id) {

@@ -35,6 +35,11 @@ spring:
             auto: none
           show_sql: true
           format_sql: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
 
 
 

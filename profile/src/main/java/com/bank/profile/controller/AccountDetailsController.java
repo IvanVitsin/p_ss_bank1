@@ -65,7 +65,7 @@ public class AccountDetailsController {
     @Operation(summary = "Удалить деталь аккаунта по ID",
             description = "Этот API позволяет удалить  существующую деталь аккаунт по ID")
     @ApiResponse(responseCode = "200", description = "Деталь аккаунта успешно удалена")
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}",produces = "application/json;charset=UTF-8")
     public ResponseEntity<Void> deleteAccountDetails(@PathVariable("id")
                                                      @Parameter(description = "Идентификатор детали аккаунта ID")
                                                      Long id) {

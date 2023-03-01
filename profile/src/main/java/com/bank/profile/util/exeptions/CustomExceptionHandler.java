@@ -85,16 +85,16 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
      * Обрабатывает исключения  MethodArgumentTypeMismatchException.
      *
      * @param ex     Исключение, которое нужно обработать.
-     * @param status Код состояния HTTP для ответа.
+    // * @param status Код состояния HTTP для ответа.
      * @return объект ResponseEntity, содержащий сведения об ошибке
      */
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
-    protected ResponseEntity<Object> handleMethodArgumentTypeMismatch(MethodArgumentTypeMismatchException ex,
-                                                                      HttpStatus status) {
+    protected ResponseEntity<Object> handleMethodArgumentTypeMismatch(MethodArgumentTypeMismatchException ex
+                                                                      ) {
         ErrorDto apiError = new ErrorDto();
         apiError.setError("The parameter  of value  could not be converted to type");
         apiError.setErrorDescription(ex.getMessage());
         log.error("Ошибка до получения данных в контроллер");
-        return new ResponseEntity<>(apiError, status);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(apiError);
     }
 }

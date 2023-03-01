@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class BeanUtil implements ApplicationContextAware {
-    private static ApplicationContext context;
+    public static ApplicationContext context;
 
     /**
      * Этот метод устанавливает applicationContext приложения.

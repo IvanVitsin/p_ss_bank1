@@ -61,7 +61,7 @@ public class ActualRegisController {
     @Operation(summary = "Удалить фактическую регистрацию по ID",
             description = "Этот API позволяет удалить  существующую фактическую  регистрацию по ID")
     @ApiResponse(responseCode = "200", description = "Фактическую регистрация успешно удалена")
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}",produces = "application/json;charset=UTF-8")
     public ResponseEntity<String> deleteActualRegistration(@PathVariable("id")
                                                            @Parameter(description = "Идентификатор фактической регистрации, ID")
                                                            Long id) {

@@ -95,7 +95,7 @@ public class ProfileController {
     @Operation(summary = "Удалить профиль по ID",
             description = "Этот API позволяет удалить  существующий профиль по ID")
     @ApiResponse(responseCode = "200", description = "Профиль успешно удален")
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}",produces = "application/json;charset=UTF-8")
     public ResponseEntity<String> deleteProfile(@PathVariable("id")
                                                 @Parameter(description = "Идентификатор профиля ID")
                                                 Long id) {

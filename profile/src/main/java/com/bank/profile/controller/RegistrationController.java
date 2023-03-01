@@ -63,7 +63,7 @@ public class RegistrationController {
     @Operation(summary = "Удалить регистрацию по ID",
             description = "Этот API позволяет удалить  существующую регистрацию по ID")
     @ApiResponse(responseCode = "200", description = "Регистрация успешно удалена")
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}",produces = "application/json;charset=UTF-8")
     public ResponseEntity<String> deleteRegistration(@PathVariable("id")
                                                      @Parameter(description = "Идентификатор регистрации ID")
                                                      Long id) {
