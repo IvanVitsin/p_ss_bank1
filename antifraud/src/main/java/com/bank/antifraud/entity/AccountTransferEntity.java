@@ -1,5 +1,6 @@
 package com.bank.antifraud.entity;
 
+import com.bank.antifraud.service.audit.AuditAbstract;
 import com.bank.antifraud.service.audit.AuditingAccount;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
@@ -12,15 +13,17 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "suspicious_account_transfers", schema = "public")
+@Table(name = "suspicious_account_transfers", schema = "anti_fraud")
 @Getter
 @Setter
 @Builder
+@ToString
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @EntityListeners(AuditingAccount.class)
 @Schema(description = "информация о подозрительных переводах на аккаунте")
-public class AccountTransferEntity {
+public class AccountTransferEntity extends AuditAbstract {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,7 +45,5 @@ public class AccountTransferEntity {
 
     @Column(name = "suspicious_reason")
     private String suspiciousReason;
-
-
 
 }

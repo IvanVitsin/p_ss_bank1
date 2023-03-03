@@ -51,13 +51,13 @@ public class PhoneTransferController {
 
     @DeleteMapping("/{id}")
     @ApiOperation("удаление подозрительного перевода по id")
-    public void deletePhoneTransfer(@PathVariable Long id) {
+    public ResponseEntity<String> deletePhoneTransfer(@PathVariable Long id) {
         if (phoneTransferService.findAccountTransferById(id) == null) {
             throw new NotFoundException("No transfer with such ID found");
         }
         phoneTransferService.deleteAccountTransfer(id);
         System.out.printf("user with id: %d was deleted", id);
+
+        return new ResponseEntity<>("Данные успешно удалены", HttpStatus.OK);
     }
-
-
 }

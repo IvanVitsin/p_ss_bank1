@@ -1,5 +1,6 @@
 package com.bank.antifraud.entity;
 
+import com.bank.antifraud.service.audit.AuditAbstract;
 import com.bank.antifraud.service.audit.AuditingAccount;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
@@ -18,7 +19,7 @@ import javax.persistence.*;
 @EntityListeners(AuditingAccount.class)
 @Schema(description = "информация о подозрительных переводах по номеру телефона")
 
-public class PhoneTransferEntity {
+public class PhoneTransferEntity extends AuditAbstract {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +27,7 @@ public class PhoneTransferEntity {
     private Long id;
 
     @Column(name = "phone_transfer_id", unique = true)
-    private Long PhoneTransferId;
+    private Long phoneTransferId;
 
     @Column(name = "is_blocked")
     private boolean isBlocked;

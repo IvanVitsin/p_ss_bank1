@@ -52,12 +52,14 @@ public class CardTransferController {
 
     @DeleteMapping("/{id}")
     @ApiOperation("удаление подозрительного перевода по id")
-    public void deleteAccountTransfer(@PathVariable Long id) {
+    public ResponseEntity<String> deleteAccountTransfer(@PathVariable Long id) {
         if (cardTransferService.findAccountTransferById(id) == null) {
             throw new NotFoundException("No transfer with such ID found");
         }
         cardTransferService.deleteAccountTransfer(id);
-        System.out.printf("user with id: %d was deleted", id);
+
+        System.out.printf("Данные успешно удалены");
+        return new ResponseEntity<>("Данные успешно удалены", HttpStatus.OK);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.bank.antifraud.entity;
 
+import com.bank.antifraud.service.audit.AuditAbstract;
 import com.bank.antifraud.service.audit.AuditingCard;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
@@ -18,8 +19,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @EntityListeners(AuditingCard.class)
 @Schema(description = "информация о подозрительных переводах по номеру карты")
-
-public class CardTransferEntity {
+public class CardTransferEntity extends AuditAbstract {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

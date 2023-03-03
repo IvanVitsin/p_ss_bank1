@@ -6,6 +6,7 @@ import com.bank.antifraud.repository.AccountTransferRepository;
 import com.bank.antifraud.service.AccountTransferService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -56,12 +57,14 @@ public class AccountTransferController {
 
 
     @DeleteMapping("/{id}")
+    @ApiResponse(responseCode = "200", description = "Фактическую регистрация успешно удалена")
     @ApiOperation("удаление информации о подозрительной транзакции")
-    public void deleteAccountTransfer(@PathVariable Long id) {
+    public ResponseEntity<String> deleteAccountTransfer(@PathVariable("id") Long id) {
         if (accountTransferService.findAccountTransferById(id) == null) {
             throw new NotFoundException("No transfer with such ID found");
         }
         accountTransferService.deleteAccountTransfer(id);
         System.out.printf("user with id: %d was deleted", id);
+        return new ResponseEntity<>("Данные успешно удалены", HttpStatus.OK);
     }
 }

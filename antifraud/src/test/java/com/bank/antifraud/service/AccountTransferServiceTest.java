@@ -1,6 +1,4 @@
 package com.bank.antifraud.service;
-
-
 import com.bank.antifraud.entity.AccountTransferEntity;
 import com.bank.antifraud.repository.AccountTransferRepository;
 import org.junit.jupiter.api.Test;
@@ -9,8 +7,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.test.context.ContextConfiguration;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -21,6 +17,7 @@ public class AccountTransferServiceTest {
 
     @InjectMocks
     private AccountTransferService accountTransferService;
+
 
     @Mock
     private AccountTransferRepository accountTransferRepository;
@@ -51,6 +48,13 @@ public class AccountTransferServiceTest {
 
     }
 
+    @Test
+    public void getAllAccounts() {
+        List<AccountTransferEntity> accountTransferEntity = getAccounts();
+        Mockito.when(accountTransferRepository.findAll()).thenReturn(accountTransferEntity);
+        accountTransferService.getAllAccounts();
+        verify(accountTransferRepository).findAll();
+    }
 
 
     private List<AccountTransferEntity> getAccounts() {

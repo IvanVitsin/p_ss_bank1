@@ -13,6 +13,7 @@ import javax.validation.constraints.NotNull;
  * @since 20.02.2023
  */
 @Getter
+@Builder
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
